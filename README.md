@@ -97,7 +97,7 @@ Check out the example code in any folder e.g `~/code/pascal/turbo-dev`
 will hopefully result in something like
 
 ```
-D:\code\pascal\turbo-dev\src>TPC pixels.pas -B -Ooutput
+D:\code\pascal\turbo-dev\src>TPC pixels.pas -B
 Turbo Pascal  Version 7.0  Copyright (c) 1983,92 Borland International
 PIXELS.PAS(170)
 567 lines, 6624 bytes code, 5192 bytes data.
