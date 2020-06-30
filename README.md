@@ -26,7 +26,7 @@ Extract the file using 7-Zip. If 7-Zip isn't available, install it first.
 ```
 ~$ sudo apt install p7zip-full
 ~$ cd ~/msdos/tmp
-~/tmp/$ 7za x 'Borland Turbo Pascal 7.0 (1992) (3.5-720k).7z'
+~/tmp$ 7za x 'Borland Turbo Pascal 7.0 (1992) (3.5-720k).7z'
 ```
 Mount each file image  (right-click and run them with the _Disk Image Mounter_ program)
 Exatract each image `Disk001.img`, `Disk002.img`, `Disk003.img`, `Disk004.img` into a directory e.g `~/msdos/tmp`
