@@ -9,7 +9,7 @@ A "quick" tutorial on how to setup Turbo Pascal for retro-inspired development i
 * DOSBox or preferrably DOSBox-X. DOSBox-X has much better support for demos (ie Goldplay works as intended)
 * DOSEMU
 * Somewhere to place DOS programs e.g. `~/msdos`
-* Somewhere to place your own source code `~/code/pascal`
+* Somewhere to place your own source code e.g. `~/code/pascal`
 
 
 ##### Install DOSBox-X (https://www.dosbox-x.com/)
@@ -62,7 +62,7 @@ Exit DOSBox
 #####  Create a soft link to the Turbo Pascal installation
 
 ```
-~$ ln -s msdos/apps/tp7 tp7
+~$ ln -s ~/msdos/apps/tp7 tp7
 ```
 
 ```
@@ -97,7 +97,7 @@ Check out the example code in any folder e.g `~/code/pascal/turbo-dev`
 will hopefully result in something like
 
 ```
-D:\code\pascal\spasm\src>TPC pixels.pas -B -Ooutput
+D:\code\pascal\turbo-dev\src>TPC pixels.pas -B -Ooutput
 Turbo Pascal  Version 7.0  Copyright (c) 1983,92 Borland International
 PIXELS.PAS(170)
 567 lines, 6624 bytes code, 5192 bytes data.
