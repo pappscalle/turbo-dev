@@ -1,1 +1,1 @@
-TPC %1 -B -Ooutput
+TPC %1 -B  
