@@ -2,7 +2,7 @@
 A "quick" tutorial on how to setup Turbo Pascal for retro-inspired development in Ubuntu
 
 
-##### Requisites
+#### Requisites
 
 * Turbo Pascal 7 (or other version)
 * 7-Zip for extractinng Turbo Pascal installation files (Optional)
@@ -12,13 +12,13 @@ A "quick" tutorial on how to setup Turbo Pascal for retro-inspired development i
 * Somewhere to place your own source code e.g. `~/code/pascal`
 
 
-##### Install DOSBox-X (https://www.dosbox-x.com/)
+#### Install DOSBox-X (https://www.dosbox-x.com/)
 
 ```
 ~$ sudo snap install dosbox-x
 ```
 
-##### Install Turbo Pascal 7 (https://winworldpc.com/product/turbo-pascal/7x)
+#### Install Turbo Pascal 7 (https://winworldpc.com/product/turbo-pascal/7x)
 
 Download  _Borland Turbo Pascal 7.0 (1992) (3.5-720k).7z_ to a temporary dirctory e.g `~/msdos/tmp`
 Extract the file using 7-Zip. If 7-Zip isn't available, install it first.
@@ -47,19 +47,19 @@ Z:\TMP\> install.exe
 Install turbo pascal in a directory e.g `~/msdos/apps/tp7` (and with the `*.exe` files in `/msdos/apps/tp7/bin`)
 Exit DOSBox
 
-#####  Install DOSEMU (http://www.dosemu.org/)
+####  Install DOSEMU (http://www.dosemu.org/)
 
 ```
 ~$ sudo apt install dosemu
 ```
 
-#####  Go to the DOSEMU home folder:
+####  Go to the DOSEMU home folder:
 
 ```
 ~$ cd ~/.dosemu/drive_c
 ```
 
-#####  Create a soft link to the Turbo Pascal installation
+####  Create a soft link to the Turbo Pascal installation
 
 ```
 ~$ ln -s ~/msdos/apps/tp7 tp7
@@ -84,12 +84,12 @@ path z:\bin;z:\gnu;z:\dosemu;c:\tp7\bin
 ```
 
 
-##### Create the source folder
+#### Create the source folder
 
 Check out the example code in any folder e.g `~/code/pascal/turbo-dev`
 
 
-#####  Go to the source folder and compile a Pascal file from the command line:
+####  Go to the source folder and compile a Pascal file from the command line:
 ```
 ~$ cd /code/pascal/turbo-dev/src
 ~$ dosemu build.bat pixels.pas -dumb
@@ -103,7 +103,7 @@ PIXELS.PAS(170)
 567 lines, 6624 bytes code, 5192 bytes data.
 ```
 
-#####  Run the pixels.exe file with DOSBox
+####  Run the pixels.exe file with DOSBox
 ```
 ~$ dosbox-x pixels.exe
 ```
