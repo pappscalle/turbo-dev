@@ -54,6 +54,14 @@ Exit DOSBox
 ~$ sudo apt install dosemu
 ```
 
+On eg Ubuntu 20.04+ run
+```
+sudo add-apt-repository ppa:dosemu2/ppa
+sudo apt update
+sudo apt install dosemu2
+```
+
+
 ####  Go to the DOSEMU home folder:
 
 ```
