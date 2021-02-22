@@ -41,6 +41,7 @@ in DOSBox, mount the temporary directory where the Turbo Pascal files a extrecte
 
 ```
 Z:\>mount c: .
+Z:\>c:
 Z:\>cd tmp
 Z:\TMP\> install.exe
 ```
