@@ -14,13 +14,9 @@
     <mkdir dir="${build}"/>
   </target>
 
-  <target name="compile" depends="init"
-        description="compile the source">
-
+  <target name="compile" depends="init" description="compile the source">
       <exec executable="dosemu">
-    	<arg value="-E"/>
-    	<arg value="build.bat"/>
-    	<arg value="-dumb"/>
+    	<arg line="-E build.bat -K . -dumb"/>
       </exec>
   </target>
 
