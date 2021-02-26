@@ -41,6 +41,7 @@ in DOSBox, mount the temporary directory where the Turbo Pascal files a extrecte
 
 ```
 Z:\>mount c: .
+Z:\>c:
 Z:\>cd tmp
 Z:\TMP\> install.exe
 ```
@@ -52,6 +53,14 @@ Exit DOSBox
 ```
 ~$ sudo apt install dosemu
 ```
+
+On eg Ubuntu 20.04+ run
+```
+sudo add-apt-repository ppa:dosemu2/ppa
+sudo apt update
+sudo apt install dosemu2
+```
+
 
 ####  Go to the DOSEMU home folder:
 
