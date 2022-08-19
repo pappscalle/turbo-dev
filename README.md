@@ -34,7 +34,7 @@ Run DOSBox
 
 ```
 ~$ cd ~/msdos
-~$ dosbox
+~$ dosbox-x
 ```
 
 in DOSBox, mount the temporary directory where the Turbo Pascal files a extrected, and the run the Turbo Pascal installer
