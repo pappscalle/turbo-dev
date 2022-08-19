@@ -77,11 +77,11 @@ If the folder doesn't exist, run DOSEMU once to create the DOSEMU home folder, a
 ####  Create a soft link to the Turbo Pascal installation
 
 ```
-~$ ln -s ~/msdos/apps/tp7 tp7
+~/.dosemu/drive_c$ ln -s ~/msdos/apps/tp7 tp7
 ```
 
 ```
-~$ ls -la
+~/.dosemu/drive_c$ ls -la
 autoexec.bat
 config.sys
 tmp
@@ -90,7 +90,7 @@ tp7 -> /home/youruser/msdos/apps/tp7
 #####  Edit the autoexec.bat and include TP7 to the path
 
 ```
-~$ nano autoexec.bat
+~/.dosemu/drive_c$ nano autoexec.bat
 ```
 Add `c:\tp7\bin` at the end of the _path_
 
