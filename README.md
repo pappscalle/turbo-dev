@@ -54,7 +54,7 @@ Exit DOSBox
 ~$ sudo apt install dosemu
 ```
 
-On eg Ubuntu 20.04+ run
+On eg Ubuntu 20.04+ run the following to install DOSEMU2
 ```
 sudo add-apt-repository ppa:dosemu2/ppa
 sudo apt update
@@ -87,7 +87,7 @@ config.sys
 tmp
 tp7 -> /home/youruser/msdos/apps/tp7
 ```
-#####  Edit the autoexec.bat and include TP7 to the path
+#####  For DOSEMU1, edit the autoexec.bat and include TP7 to the path
 
 ```
 ~/.dosemu/drive_c$ nano autoexec.bat
@@ -98,6 +98,17 @@ Add `c:\tp7\bin` at the end of the _path_
 path z:\bin;z:\gnu;z:\dosemu;c:\tp7\bin
 ```
 
+#####  For DOSEMU2, creata a file called userhook.bat and include TP7 to the path
+
+```
+~/.dosemu/drive_c$ nano userhook.bat
+```
+Add `c:\tp7\bin` at the end of the _path_
+
+```
+set PATH=%PATH%;C:\tp7\bin
+
+```
 
 #### Create the source folder
 
