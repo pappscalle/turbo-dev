@@ -62,11 +62,17 @@ sudo apt install dosemu2
 ```
 
 
+
 ####  Go to the DOSEMU home folder:
 
 ```
 ~$ cd ~/.dosemu/drive_c
 ```
+If the folder doesn't exist, run DOSEMU once to create the DOSEMU home folder, and the exit DOSEMU by typing "exit"
+```
+~$ dosmenu
+```
+
 
 ####  Create a soft link to the Turbo Pascal installation
 
