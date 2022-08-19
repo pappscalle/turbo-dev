@@ -7,7 +7,7 @@ A "quick" tutorial on how to setup Turbo Pascal in Ubuntu so you can code like i
 * Turbo Pascal 7 (or other version)
 * 7-Zip for extractinng Turbo Pascal installation files (Optional)
 * DOSBox or preferrably DOSBox-X. DOSBox-X has much better support for demos (ie Goldplay works as intended)
-* DOSEMU
+* DOSEMU2
 * Somewhere to place DOS programs e.g. `~/msdos`
 * Somewhere to place your own source code e.g. `~/code/pascal`
 
@@ -48,11 +48,7 @@ Z:\TMP\> install.exe
 Install turbo pascal in a directory e.g `~/msdos/apps/tp7` (and with the `*.exe` files in `/msdos/apps/tp7/bin`)
 Exit DOSBox
 
-####  Install DOSEMU (http://www.dosemu.org/)
-
-```
-~$ sudo apt install dosemu
-```
+####  Install DOSEMU2 (https://code.launchpad.net/~dosemu2/+archive/ubuntu/ppa)
 
 On eg Ubuntu 20.04+ run the following to install DOSEMU2
 ```
@@ -60,9 +56,6 @@ sudo add-apt-repository ppa:dosemu2/ppa
 sudo apt update
 sudo apt install dosemu2
 ```
-
-
-
 ####  Go to the DOSEMU home folder:
 
 ```
@@ -87,17 +80,6 @@ config.sys
 tmp
 tp7 -> /home/youruser/msdos/apps/tp7
 ```
-#####  For DOSEMU1, edit the autoexec.bat and include TP7 to the path
-
-```
-~/.dosemu/drive_c$ nano autoexec.bat
-```
-Add `c:\tp7\bin` at the end of the _path_
-
-```
-path z:\bin;z:\gnu;z:\dosemu;c:\tp7\bin
-```
-
 #####  For DOSEMU2, creata a file called userhook.bat and include TP7 to the path
 
 ```
