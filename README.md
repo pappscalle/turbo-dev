@@ -45,7 +45,7 @@ Z:\>c:
 Z:\>cd tmp
 Z:\TMP\> install.exe
 ```
-Install turbo pascal in a directory e.g `~/msdos/apps/tp7` (and with the `*.exe` files in `/msdos/apps/tp7/bin`)
+Install turbo pascal in a directory e.g `c:\apps\tp7` (`~/msdos/apps/tp7`) (and with the `*.exe` files in `c:\apps\tp7\bin`)
 Exit DOSBox
 
 ####  Install DOSEMU2 (https://code.launchpad.net/~dosemu2/+archive/ubuntu/ppa)
