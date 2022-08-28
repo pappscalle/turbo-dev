@@ -63,7 +63,7 @@ sudo apt install dosemu2
 ```
 If the folder doesn't exist, run DOSEMU once to create the DOSEMU home folder, and the exit DOSEMU by typing "exit"
 ```
-~$ dosmenu
+~$ dosemu
 ```
 
 
