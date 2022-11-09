@@ -99,9 +99,14 @@ Check out the example code in any folder e.g `~/code/pascal/turbo-dev`
 
 ####  Go to the source folder and compile a Pascal file from the command line:
 ```
-~$ cd /code/pascal/turbo-dev/src
-~$ dosemu build.bat pixels.pas -dumb
+~$ cd /code/pascal/turbo-dev/
+~$ dosemu -E build.bat -K . -dumb
 ```
+or simply run 
+```
+~$ ant
+``
+
 will hopefully result in something like
 
 ```
