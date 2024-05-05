@@ -61,7 +61,7 @@ sudo apt install dosemu2
 ```
 ~$ cd ~/.dosemu/drive_c
 ```
-If the folder doesn't exist, run DOSEMU once to create the DOSEMU home folder, and the exit DOSEMU by typing "exit"
+If the folder doesn't exist, run DOSEMU once to create the DOSEMU home folder, and the exit DOSEMU by typing "exitemu"
 ```
 ~$ dosemu
 ```
