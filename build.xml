@@ -15,22 +15,36 @@
   </target>
 
   <target name="compile" depends="init" description="compile the source">
-      <exec executable="dosemu">
+     <exec executable="dosemu">
     	<arg line="-E build.bat -K . -dumb"/>
-      </exec>
+    </exec>
+    <!-- Move .exe files to the build directory -->
+    <move todir="${build}">
+        <fileset dir="${src}">
+            <include name="**/*.exe"/>
+        </fileset>
+    </move>
+    <!-- Delete .exe files from the src directory -->
+    <delete>
+        <fileset dir="${src}">
+            <include name="**/*.exe"/>
+        </fileset>
+    </delete>
   </target>
 
-  <target name="dist" depends="compile"
-        description="generate the distribution">
+  <target name="zip" depends="compile" description="zip every file in /build and move the zip to dist folder">
+    <zip destfile="${dist}/build.zip">
+      <fileset dir="${build}"/>
+    </zip>
+  </target>
+
+  <target name="dist" depends="zip" description="generate the distribution">
     <!-- Create the distribution directory -->
-    <mkdir dir="${dist}/lib"/>
+    <!--<mkdir dir="${dist}"/>-->
 
-    <!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
-    <jar jarfile="${dist}/lib/MyProject-${DSTAMP}.jar" basedir="${build}"/>
   </target>
 
-  <target name="clean"
-        description="clean up">
+  <target name="clean" description="clean up">
     <!-- Delete the ${build} and ${dist} directory trees -->
     <delete dir="${build}"/>
     <delete dir="${dist}"/>
