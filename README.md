@@ -100,7 +100,7 @@ Check out the example code in any folder e.g `~/code/pascal/turbo-dev`
 ####  Go to the source folder and compile a Pascal file from the command line:
 ```
 ~$ cd /code/pascal/turbo-dev/
-~$ dosemu -E build.bat -K . -dumb
+~$ dosemu -K src/build.bat -dumb
 ```
 or simply run 
 ```
@@ -118,5 +118,6 @@ PIXELS.PAS(170)
 
 ####  Run the pixels.exe file with DOSBox
 ```
-~$ dosbox-x pixels.exe
+~$ cd build
+~/build$ dosbox-x pixels.exe
 ```
