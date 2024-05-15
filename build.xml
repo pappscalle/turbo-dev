@@ -16,7 +16,7 @@
 
   <target name="compile" depends="init" description="compile the source">
      <exec executable="dosemu">
-    	<arg line="-E build.bat -K . -dumb"/>
+    	<arg line="-K src/build.bat -dumb"/>
     </exec>
     <!-- Move .exe files to the build directory -->
     <move todir="${build}">
