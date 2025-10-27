@@ -2,51 +2,62 @@
   <description>
     Build Turbo Pascal
   </description>
+
   <!-- set global properties for this build -->
   <property name="src" location="src"/>
   <property name="build" location="build"/>
   <property name="dist" location="dist"/>
 
+  <!-- Create the build directory -->
   <target name="init">
-    <!-- Create the time stamp -->
     <tstamp/>
-    <!-- Create the build directory structure used by compile -->
     <mkdir dir="${build}"/>
+    <mkdir dir="${dist}"/>
   </target>
 
-  <target name="compile" depends="init" description="compile the source">
-     <exec executable="dosemu">
-    	<arg line="-K src/build.bat -dumb"/>
+  <!-- Compile all Pascal sources -->
+  <target name="compile" depends="init" description="compile all Pascal sources">
+    <!-- Execute build.bat with DOSEMU -->
+    <exec executable="dosemu">
+      <arg line="-quiet src/build.bat -dumb"/>
     </exec>
-    <!-- Move .exe files to the build directory -->
+
+    <!-- Move compiled .exe files to build directory -->
     <move todir="${build}">
-        <fileset dir="${src}">
-            <include name="**/*.exe"/>
-        </fileset>
+      <fileset dir="${src}">
+        <include name="**/*.exe"/>
+      </fileset>
     </move>
-    <!-- Delete .exe files from the src directory -->
+
+    <!-- Optional: delete .exe files from src -->
     <delete>
-        <fileset dir="${src}">
-            <include name="**/*.exe"/>
-        </fileset>
+      <fileset dir="${src}">
+        <include name="**/*.exe"/>
+      </fileset>
     </delete>
   </target>
 
-  <target name="zip" depends="compile" description="zip every file in /build and move the zip to dist folder">
+  <!-- Zip the build directory -->
+  <target name="zip" depends="compile" description="zip the build folder">
     <zip destfile="${dist}/build.zip">
       <fileset dir="${build}"/>
     </zip>
   </target>
 
-  <target name="dist" depends="zip" description="generate the distribution">
-    <!-- Create the distribution directory -->
-    <!--<mkdir dir="${dist}"/>-->
+  <!-- Distribution target -->
+  <target name="dist" depends="zip" description="generate the distribution"/>
 
-  </target>
-
-  <target name="clean" description="clean up">
-    <!-- Delete the ${build} and ${dist} directory trees -->
+  <!-- Clean build and dist -->
+  <target name="clean" description="clean up build and dist directories">
     <delete dir="${build}"/>
     <delete dir="${dist}"/>
   </target>
+
+  <!-- Run compiled executable -->
+  <target name="run" depends="compile" description="run the compiled program">
+    <exec executable="dosemu">
+      <arg line="-E ${build}/pixels.exe -K . -dumb"/>
+    </exec>
+  </target>
 </project>
+
