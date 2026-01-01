@@ -119,5 +119,5 @@ PIXELS.PAS(170)
 ####  Run the pixels.exe file with DOSBox
 ```
 ~$ cd build
-~/build$ dosbox-x -fastlaunch -exit pixels.exe
+~/build$ dosbox-x -fastlaunch -nolog -exit pixels.exe
 ```
