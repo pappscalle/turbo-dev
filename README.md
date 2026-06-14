@@ -15,7 +15,7 @@ A "quick" tutorial on how to setup Turbo Pascal in Ubuntu so you can code like i
 #### Install DOSBox-X (https://www.dosbox-x.com/)
 
 ```
-~$ sudo snap install dosbox-x
+~$ sudo apt install dosbox-x
 ```
 
 #### Install Turbo Pascal 7 (https://winworldpc.com/product/turbo-pascal/7x)
