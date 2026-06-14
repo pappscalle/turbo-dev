@@ -115,7 +115,15 @@ echo "Extracting TPL.ZIP to $TP7_BIN..."
 7z e "$TPL_ZIP" -aoa -o"$TP7_BIN"
 pause
 
-# --- Step 10: Initialize DOSEMU drive_c if needed ---
+# --- Step 10: Fix libdj64 symlinks ---
+if [ ! -f /usr/lib/x86_64-linux-gnu/libdj64.so.0.2 ]; then
+    ln -sf /usr/lib/x86_64-linux-gnu/i386-pc-dj64/lib64/libdj64.so.0.2 /usr/lib/x86_64-linux-gnu/libdj64.so.0.2
+    ln -sf /usr/lib/x86_64-linux-gnu/i386-pc-dj64/lib64/libdj64.so.0 /usr/lib/x86_64-linux-gnu/libdj64.so.0
+    ldconfig
+fi
+pause
+
+# --- Step 11: Initialize DOSEMU drive_c if needed ---
 if [ ! -d "$DOSEMU_C" ]; then
     echo "Initializing DOSEMU home directory..."
     dosemu -dumb -E exitemu || true
@@ -123,14 +131,14 @@ fi
 mkdir -p "$DOSEMU_C"
 pause
 
-# --- Step 11: Create DOSEMU symlink ---
+# --- Step 12: Create DOSEMU symlink ---
 if [ ! -L "$DOSEMU_C/tp7" ]; then
     echo "Creating symlink for DOSEMU..."
     ln -sf "$TP7_DIR" "$DOSEMU_C/tp7"
 fi
 pause
 
-# --- Step 12: Configure userhook.bat ---
+# --- Step 13: Configure userhook.bat ---
 USERHOOK="$DOSEMU_C/userhook.bat"
 echo "Configuring DOSEMU PATH..."
 # Create file if it doesn’t exist
@@ -142,11 +150,11 @@ if ! grep -Fxq "set PATH=%PATH%;C:\\tp7\\bin" "$USERHOOK"; then
 fi
 
 
-# --- Step 13: Clean up temporary files ---
+# --- Step 14: Clean up temporary files ---
 echo "Cleaning up temporary files..."
 rm -rf "$TMP_DIR"
 
-# --- Step 14: Verify installation ---
+# --- Step 15: Verify installation ---
 if [ -f "$TP7_BIN/TPC.EXE" ]; then
     echo "Turbo Pascal compiler (TPC.EXE) successfully extracted!"
 else
