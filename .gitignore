@@ -1,4 +1,3 @@
 *.exe
 *.tpu
-dist
 build
