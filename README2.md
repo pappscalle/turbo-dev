@@ -7,7 +7,7 @@ Turbo Pascal 7 on Ubuntu using DOSEMU2.
 - Ubuntu 20.04+
 - Turbo Pascal 7 archive from https://winworldpc.com/product/turbo-pascal/7x
 
-#### 1. Install dependencies
+#### Install dependencies
 
 ```
 sudo add-apt-repository ppa:dosemu2/ppa
@@ -15,7 +15,7 @@ sudo apt update
 sudo apt install p7zip-full dosbox-x dosemu2 dj64 wget
 ```
 
-#### 2. Extract Turbo Pascal
+#### Extract Turbo Pascal
 
 Download _Borland Turbo Pascal 7.0 (1992) (3.5-720k).7z_ to `~/msdos/tmp`, then:
 
@@ -31,7 +31,7 @@ for img in *.img; do 7z x "$img" -aoa -oextracted; done
 7z e extracted/UNITS.ZIP -aoa -o../apps/tp7/units
 ```
 
-#### 3. Configure DOSEMU2
+#### Configure DOSEMU2
 
 Run `dosemu` once to initialize `~/.dosemu/drive_c`, then exit by typing `exitemu`.
 
@@ -60,18 +60,17 @@ ln -s ~/msdos/apps/tp7 ~/.dosemu/drive_c/tp7
 echo 'set PATH=%PATH%;C:\tp7\bin' >> ~/.dosemu/drive_c/userhook.bat
 ```
 
-#### 4. Compile
+#### Compile
 
 ```
 cd ~/code/pascal/turbo-dev
-dosemu -K src/build.bat -dumb
+dosemu src/build.bat -dumb
 ```
 
 or simply run `ant`.
 
-#### 5. Run
+#### Run
 
 ```
-cd build
-dosbox-x pixels.exe
+dosbox-x -fastlaunch -nolog -exit build/pixels.exe
 ```
