@@ -6,14 +6,14 @@ BUILD = build
 all: run
 
 $(BUILD):
-	mkdir -p $@
+	@mkdir -p $@
 
 compile: | $(BUILD)
-	dosemu -quiet src/build.bat -dumb
-	mv $(SRC)/*.exe $(BUILD)/ 2>/dev/null || true
+	@dosemu -quiet -K $(SRC)/ -E "command.com /c build.bat" 
+	@mv $(SRC)/*.exe $(BUILD)/ 2>/dev/null || true
 
 run: compile
-	dosbox-x -fastlaunch -nolog -exit $(BUILD)/pixels.exe
+	@dosbox-x -fastlaunch -nolog -exit $(BUILD)/pixels.exe
 
 clean:
-	rm -rf $(BUILD)
+	@rm -rf $(BUILD)
